@@ -29,3 +29,13 @@ Funciones
 // esperar a que se parsee todo el html para ejecutarse
 <script defer src="path/tujs.js"></script>
 ```
+
+### Copiar objetos sin referencia
+```js
+const obj1 = {nombre: 'Miguel', hobby: 'futbol'};
+const obj2 = {...obj1};
+// comprobacion
+obj2.hobby = 'programar';
+console.log(obj1);
+console.log(obj2);
+```
