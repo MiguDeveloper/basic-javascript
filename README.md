@@ -30,6 +30,13 @@ Funciones
 <script defer src="path/tujs.js"></script>
 ```
 
+### Datos primitivos
+
+- Es un dato que no es un objeto y que carece de métodos.
+- Es inmutable.
+- Otros nombres: Primitive data type, primitive value.
+- string -> (String), numbre -> (Number), boolean -> (Boolean), null undefined, symbol(ES6 -> Symbol), object -> (Object)
+
 ### Copiar objetos sin referencia
 ```js
 const obj1 = {nombre: 'Miguel', hobby: 'futbol'};
@@ -38,4 +45,48 @@ const obj2 = {...obj1};
 obj2.hobby = 'programar';
 console.log(obj1);
 console.log(obj2);
+
+// Por ejemplo para array podemos hacer lo siguiente
+let lista = [1,4,7,9];
+let listaCopy = lista.slice();
+lista[1] = 11;
+console.log(lista);
+console.log(listaCopy);
 ```
+
+### Variables
+
+- let, const. Son los recomendados
+- var ya no se recomienda usar
+
+```js
+var mensaje = 'este es un mensaje';
+console.log(mensaje); // imprime 'este es un mensaje'
+{
+    var mensaje = 'otro mensaje';
+    console.log(mensaje); // imprime 'otro mensaje'
+}
+console.log(mensaje); // imprime 'otro mensaje'
+
+// let viene a resolver el tema de los scopes
+let mensaje = 'este es un mensaje';
+console.log(mensaje); // imprime 'este es un mensaje'
+{
+    let mensaje = 'otro mensaje';
+    console.log(mensaje); // imprime 'otro mensaje'
+}
+console.log(mensaje); // imprime 'este es un mensaje'
+```
+
+### Scope
+
+- Shadowing
+- function scope vs block scope
+
+### Event Loop
+
+El event loop es posiblemente una de las partes mas importantes para entender Js:
+- Es el mecanismo que utiliza Js par emular la asincronía.
+- Es un bucle en el que en cada iteración(ticks) se pasa por fases.
+- La duración de un tick no es fija(depende de las tareas ne cada fase).
+- Stack + heap + message queue
