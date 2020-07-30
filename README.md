@@ -90,3 +90,24 @@ El event loop es posiblemente una de las partes mas importantes para entender Js
 - Es un bucle en el que en cada iteración(ticks) se pasa por fases.
 - La duración de un tick no es fija(depende de las tareas ne cada fase).
 - Stack + heap + message queue
+
+### Expresiones regulares
+ 
+- Comienza y termina con / y medio va el patrón que deseamos buscar y luego de la apertura y cierre vienen los modificadores, por ejemplo: /a/g
+
+```js
+const frase = 'endk ednke d edk ekd';
+frase.match(/[a-z]*00/g); // retorna un arreglo con las coincidencias regex101.com
+```
+
+### objetos en Js
+
+```js
+const obj = {
+    habitaciones: 3,
+    garaje: true
+}
+
+obj.hasOwnProperty('garaje'); // verificamos si tiene esa propiedad
+Object.key(obj); // listamos las propiedades del objeto
+```
