@@ -111,3 +111,20 @@ const obj = {
 obj.hasOwnProperty('garaje'); // verificamos si tiene esa propiedad
 Object.key(obj); // listamos las propiedades del objeto
 ```
+### Valores false
+
+- false, undefined, null, 0, NaN, ''
+
+### Toma de desiciones
+
+```js
+function priceByColor(color){
+    const prices = {
+        'blanco': 10,
+        'verde': 15,
+        'azul': 20
+    }
+
+    return prices[color.toLowerCase()];
+}
+```
