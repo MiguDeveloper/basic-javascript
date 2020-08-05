@@ -128,3 +128,19 @@ function priceByColor(color){
     return prices[color.toLowerCase()];
 }
 ```
+
+### Promesas
+
+#### Los métodos .then(), .catch() y .finally()
+
+- Si la promesa termina con ```resolve()``` se llamará a la primera función pasada al método ```.then()```
+- Si la promesa termina con ```reject()``` se llamará a la segunda función pasada al método ```.then()```
+- El método ```.catch()``` es otra forma alternativa de indicar la segunda función del ```.then()``` 
+- El método pasado a ```.finally()``` se ejecutaría tanto si la primera acaba con ```resolve()``` como si acaba con ```reject()```
+
+
+```js
+const promesa = new Promise((resolve, reject) => {
+    resolve('Success');
+})
+```
