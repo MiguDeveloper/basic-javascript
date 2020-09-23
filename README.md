@@ -1,4 +1,5 @@
 ## Javascrpit básico
+
 (Js: lenguaje de programación que nos ayuda a definir la lógica o comportamiento.)
 
 - Lo usan como lenguaje base de librerias y frameworks
@@ -38,16 +39,17 @@ Funciones
 - string -> (String), numbre -> (Number), boolean -> (Boolean), null undefined, symbol(ES6 -> Symbol), object -> (Object)
 
 ### Copiar objetos sin referencia
+
 ```js
-const obj1 = {nombre: 'Miguel', hobby: 'futbol'};
-const obj2 = {...obj1};
+const obj1 = { nombre: 'Miguel', hobby: 'futbol' };
+const obj2 = { ...obj1 };
 // comprobacion
 obj2.hobby = 'programar';
 console.log(obj1);
 console.log(obj2);
 
 // Por ejemplo para array podemos hacer lo siguiente
-let lista = [1,4,7,9];
+let lista = [1, 4, 7, 9];
 let listaCopy = lista.slice();
 lista[1] = 11;
 console.log(lista);
@@ -63,8 +65,8 @@ console.log(listaCopy);
 var mensaje = 'este es un mensaje';
 console.log(mensaje); // imprime 'este es un mensaje'
 {
-    var mensaje = 'otro mensaje';
-    console.log(mensaje); // imprime 'otro mensaje'
+  var mensaje = 'otro mensaje';
+  console.log(mensaje); // imprime 'otro mensaje'
 }
 console.log(mensaje); // imprime 'otro mensaje'
 
@@ -72,8 +74,8 @@ console.log(mensaje); // imprime 'otro mensaje'
 let mensaje = 'este es un mensaje';
 console.log(mensaje); // imprime 'este es un mensaje'
 {
-    let mensaje = 'otro mensaje';
-    console.log(mensaje); // imprime 'otro mensaje'
+  let mensaje = 'otro mensaje';
+  console.log(mensaje); // imprime 'otro mensaje'
 }
 console.log(mensaje); // imprime 'este es un mensaje'
 ```
@@ -86,13 +88,14 @@ console.log(mensaje); // imprime 'este es un mensaje'
 ### Event Loop
 
 El event loop es posiblemente una de las partes mas importantes para entender Js:
+
 - Es el mecanismo que utiliza Js par emular la asincronía.
 - Es un bucle en el que en cada iteración(ticks) se pasa por fases.
 - La duración de un tick no es fija(depende de las tareas ne cada fase).
 - Stack + heap + message queue
 
 ### Expresiones regulares
- 
+
 - Comienza y termina con / y medio va el patrón que deseamos buscar y luego de la apertura y cierre vienen los modificadores, por ejemplo: /a/g
 
 ```js
@@ -104,13 +107,14 @@ frase.match(/[a-z]*00/g); // retorna un arreglo con las coincidencias regex101.c
 
 ```js
 const obj = {
-    habitaciones: 3,
-    garaje: true
-}
+  habitaciones: 3,
+  garaje: true,
+};
 
 obj.hasOwnProperty('garaje'); // verificamos si tiene esa propiedad
 Object.key(obj); // listamos las propiedades del objeto
 ```
+
 ### Valores false
 
 - false, undefined, null, 0, NaN, ''
@@ -118,14 +122,14 @@ Object.key(obj); // listamos las propiedades del objeto
 ### Toma de desiciones
 
 ```js
-function priceByColor(color){
-    const prices = {
-        'blanco': 10,
-        'verde': 15,
-        'azul': 20
-    }
+function priceByColor(color) {
+  const prices = {
+    blanco: 10,
+    verde: 15,
+    azul: 20,
+  };
 
-    return prices[color.toLowerCase()];
+  return prices[color.toLowerCase()];
 }
 ```
 
@@ -133,14 +137,26 @@ function priceByColor(color){
 
 #### Los métodos .then(), .catch() y .finally()
 
-- Si la promesa termina con ```resolve()``` se llamará a la primera función pasada al método ```.then()```
-- Si la promesa termina con ```reject()``` se llamará a la segunda función pasada al método ```.then()```
-- El método ```.catch()``` es otra forma alternativa de indicar la segunda función del ```.then()``` 
-- El método pasado a ```.finally()``` se ejecutaría tanto si la primera acaba con ```resolve()``` como si acaba con ```reject()```
-
+- Si la promesa termina con `resolve()` se llamará a la primera función pasada al método `.then()`
+- Si la promesa termina con `reject()` se llamará a la segunda función pasada al método `.then()`
+- El método `.catch()` es otra forma alternativa de indicar la segunda función del `.then()`
+- El método pasado a `.finally()` se ejecutaría tanto si la primera acaba con `resolve()` como si acaba con `reject()`
 
 ```js
 const promesa = new Promise((resolve, reject) => {
-    resolve('Success');
-})
+  resolve('Success');
+});
 ```
+
+### Spread operators y Rest operators
+
+#### Spread
+
+- llamadas a funciones.
+- Se encuentran en el valor de una función
+
+#### Rest
+
+- En las declaraciones a funciones.
+- Desestructuacion.
+- Se encuentran en la declaración

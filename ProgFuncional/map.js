@@ -16,3 +16,13 @@ const mascotas = [
 const edades = mascotas.map((mascota) => mascota.edad);
 const sumaEdades = edades.reduce((acc, edad) => acc + edad, 0);
 console.log(sumaEdades / edades.length);
+
+const almuerzos = [
+  { principal: 'arepa', postre: 'helado' },
+  { principal: 'tacos', postre: 'torta de queso' },
+  { principal: 'pizza', postre: 'gallteas' },
+  { principal: 'sushi', postre: 'quesillo' },
+];
+
+const principales = almuerzos.map((almuerzo) => almuerzo.principal);
+console.log(principales);
