@@ -160,3 +160,14 @@ const promesa = new Promise((resolve, reject) => {
 - En las declaraciones a funciones.
 - Desestructuacion.
 - Se encuentran en la declaración
+
+### Los Callback
+
+- son funciones que se pasan por parámetro a otra función, esto se le conoce como una función de orden superior ya que no recibe un valor normal sino una función, este es un concepto que viene de la programación funcional.
+
+Un ejemplo claro de esto es lo siguiente:
+
+```javascript
+const peleadores = ['Goku', 'Vegeta', 'Gohan', 'Piccolo'];
+peleadores.foreach((peleador)=> console.log(peleador));
+```
