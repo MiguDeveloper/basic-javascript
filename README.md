@@ -160,3 +160,8 @@ const promesa = new Promise((resolve, reject) => {
 - En las declaraciones a funciones.
 - Desestructuacion.
 - Se encuentran en la declaración
+
+### Funciones de flecha y funciones normales
+
+- Las funciones de flecha siempre son anonimas aunque tambien se declaran como una expresion.
+-
