@@ -164,4 +164,16 @@ const promesa = new Promise((resolve, reject) => {
 ### Funciones de flecha y funciones normales
 
 - Las funciones de flecha siempre son anonimas aunque tambien se declaran como una expresion.
--
+- Las funciones normales nos puede traer confusiones con el puntero `this` ya que puede que intentemos referirno al contexto superior y este se refiere al contexto inmediato.
+- Las funciones de flecha nos refieren al contexto superior siempre.
+
+### Los Callback
+
+- son funciones que se pasan por parámetro a otra función, esto se le conoce como una función de orden superior ya que no recibe un valor normal sino una función, este es un concepto que viene de la programación funcional.
+
+Un ejemplo claro de esto es lo siguiente:
+
+```javascript
+const peleadores = ['Goku', 'Vegeta', 'Gohan', 'Piccolo'];
+peleadores.foreach((peleador) => console.log(peleador));
+```
