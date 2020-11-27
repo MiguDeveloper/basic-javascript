@@ -112,7 +112,7 @@ const obj = {
 };
 
 obj.hasOwnProperty('garaje'); // verificamos si tiene esa propiedad
-Object.key(obj); // listamos las propiedades del objeto
+Object.keys(obj); // listamos las propiedades del objeto
 ```
 
 ### Valores false
