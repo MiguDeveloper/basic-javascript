@@ -30,6 +30,7 @@ const [casado, vivo, nombre, saludo] = imprimeArgumentosFlecha(
   'fernando',
   'hola'
 );
+console.log(imprimeArgumentosFlecha(10, true, false, 'fernando', 'hola'));
 console.log({ casado, vivo, nombre, saludo });
 
 // desestructuracion
