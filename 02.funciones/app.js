@@ -1,11 +1,23 @@
-// las funciones deben de realizar una labor especifica
+// las funciones deben de realizar una labor especifica y centralizan una logica
 
 // parametro por defecto
+// si a las funciones clasicas le mandamos mas de un parametro lo recibira en la
+// propiedad 'arguments' de la siguente manera
 function sayHello(nombre = 'Miguel') {
+  console.log(arguments);
   console.log(`Hello ${nombre}`);
 }
 
 sayHello();
+sayHello('Abrahan');
+sayHello('Martin', 30, true);
+/* Forma recomendada de declarar una funcion:
+ * const sayHello = function (){ console.log('hola mundo')}
+ * una de las principales motivos de ponerlo como const y declarar de esta forma una
+ * funcion es que evitamos sobreescribirla, es decir, que pongamos un 'var' y modifiquemos
+ * la funcion de esta manera:
+ * var sayHello = 123;
+ */
 
 // Funciones anonimas
 const say = function () {};

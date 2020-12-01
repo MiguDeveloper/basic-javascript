@@ -1,24 +1,35 @@
 ## Javascrpit básico
 
+### precursor Brendan Eich
+
+- Crea la primera versión con netscape.
+- En 1997 se envia la especificación a los fabricantes de computadores llamado ECMA(European Computer Manufacturers Association).
+- ECMA crea el comite para estandarizar el lenguaje de script. ECMA-262 resultando ECMAScript
+
+### Versiones
+
+- 1996: liveScript a JavaScript(éstandar)
+- 1997 ES1 (ECMAScript 1)
+- 2009 ES5 (ECMAScript 5) con muchas carácteristicas nuevas(soportada por todos los navegadores).
+- 2015 ES6/ES2015 (ECMAScript 2015) que fue la actualización mas grande de javascript hasta el momento(soportado por navegadores modernos, para resolver este problema tenemos los polifills que son los que nos proveen el funcionamiento de una nueva caractrística de JavaScript(ES6) en versiones viejas como ES5).
+- 2015: se establecio el año de nuevos lanzamientos de JavaScript.
+- 2016/2017/2018/...
+
+### Recursos Js
+
+- Animaciones tipo presentación: https://revealjs.com/
+
 (Js: lenguaje de programación que nos ayuda a definir la lógica o comportamiento.)
 
+### Algunas características
+
+- Js es un lenguaje interpretado.
+- es case sensitive
 - Lo usan como lenguaje base de librerias y frameworks
 - Es utilizado en el lado front y back
 - Por lo tanto se puede ejecutar en el navegador y servidor.
 - Js es monohilo(solo se ejecuta una cosa a la vez), los webworkers permiten abrir hilos coordinados(con ciertas restricciones) con el main thread.
-- Js es de tipado dinámico
-
-### Estándares
-
-- Ecmascript, es implementado en menor o mayor grado por los navegadores
-
-### runtimes o engines
-
-Funciones
-
-- Parsear el código
-- Optimizarlo
-- Coordinar la ejecución
+- Js es de tipado dinámico(o en otras palabras debilmente tipado)
 
 ### Formas de incluir código javascript
 
@@ -30,6 +41,23 @@ Funciones
 // esperar a que se parsee todo el html para ejecutarse
 <script defer src="path/tujs.js"></script>
 ```
+
+### Tipos de datos primitivos
+
+- Es una información que no es un objeto y son inmutables.
+- Estos son:
+  - Boolean: true/false
+  - Null: sin valor en lo absoluto
+  - Undefined: una variable declarada que aún no se le asigna un valor.
+  - Number: enteros, flotantes, etc.
+  - String: una cadena de caracteres.
+  - Symbol: es un valor único que no es igual a ningun otro valor.
+
+Funciones
+
+- Parsear el código
+- Optimizarlo
+- Coordinar la ejecución
 
 ### Datos primitivos
 
