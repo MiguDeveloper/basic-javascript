@@ -205,3 +205,44 @@ Un ejemplo claro de esto es lo siguiente:
 const peleadores = ['Goku', 'Vegeta', 'Gohan', 'Piccolo'];
 peleadores.foreach((peleador) => console.log(peleador));
 ```
+
+### DOM(Document Object Model)
+
+- document: tiene todos los elementos HTML y a traves de el podemos barrer todos los elementos
+- querySelector: si queremos seleccionar un elemento podemos usar esta función, por ejemplo:
+
+```javascript
+// nos retorna el primer elemento 'small' del html
+document.querySelector('small');
+
+// obtenemos todos los elementos 'small' del html
+docuemt.querySelectorAll('small);
+
+// si queremos seleccionar un id usaremos '#'
+document.querySelector('#titulo');
+
+// lo mismos para seleccionar una clase '.'
+document.querySelector('.imagenes');
+
+// una buena practica es asignarlo a variables para no estar haciendo la busqueda
+const titulo = document.querySelector('.titulo')
+titulo.innerText = 'Reemplaza el texto';
+titulo.innerHtml = '<b>Texto reemplazo</b>'; // genera un html
+
+// Para agregar elemenros Html en el DOM, hacemos lo siguiente
+const btnNuevo = document.createElement('button');
+
+// Ahora ubicamos un contenedor donde pondemos el boton
+const divBotones = document.querySelector('#botones);
+divBotones.append(btnNuevo);
+
+// Ahora le agregamos propiedades al elemento creado
+divBotones.classList.add('btn');
+divBotones.classList.add('btn-success');
+
+const input = document.createElement('input');
+document.body.append(input);
+input.classList.add('form-control');
+input.placeHolder = 'Nombre jugador';
+
+```
