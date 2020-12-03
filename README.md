@@ -246,3 +246,26 @@ input.classList.add('form-control');
 input.placeHolder = 'Nombre jugador';
 
 ```
+
+### Funciones anonimas autoinvocadas (Patrón módulo)
+
+- Las funciones anonimas nos permiten tener un nuevo scope, el cual no tiene un referencia por nombre, con lo cual no podremos llamarlas directamente
+
+```javascript
+// con 'use strict' le estamos diciendo a javascript que evalue de  manera stricta el codigo
+'use strict'(
+  // Usando funcion de flecha
+  () => {}
+
+  // importante: los modulos siempre tienen que tener un 'return'
+  return 'Hola miguel';
+)();
+
+// usando funcion normal
+(function () {})();
+```
+
+### Code Minify
+
+- Es importante ofuscar y compactar el codigo en archivos .min
+- la web que podemos usar es: https://javascript-minifier.com/
