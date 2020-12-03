@@ -237,8 +237,8 @@ const divBotones = document.querySelector('#botones);
 divBotones.append(btnNuevo);
 
 // Ahora le agregamos propiedades al elemento creado
-divBotones.classList.add('btn');
-divBotones.classList.add('btn-success');
+btnNuevo.classList.add('btn');
+btnNuevo.classList.add('btn-success');
 
 const input = document.createElement('input');
 document.body.append(input);
