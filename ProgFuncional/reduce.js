@@ -8,7 +8,11 @@ const mascotas = [
   { nombre: 'Peluchin', edad: 3, tipo: 'perro' },
 ];
 
+console.time('find');
 console.log(mascotas.find((mascota) => mascota.nombre === 'Peluchin').edad);
+console.timeEnd('find');
+
+console.time('reduce');
 const indexed = mascotas.reduce(
   (acc, el) => ({
     ...acc,
@@ -18,6 +22,7 @@ const indexed = mascotas.reduce(
 );
 console.log(indexed);
 console.log(indexed['Peluchin']);
+console.timeEnd('reduce');
 
 const anidado = [1, [2, 3], 4, [5]];
 const plano = anidado.reduce((acc, el) => acc.concat(el), []);
@@ -140,3 +145,41 @@ const makeMap = (docs, key) => {
 
 const newDocs = makeMap(docs, 'id');
 console.log(newDocs);
+
+const perros = [
+  {
+    name: 'chanchito',
+    edad: 4,
+    raza: 'pastor',
+  },
+  {
+    name: 'Koda',
+    edad: 6,
+    raza: 'samolledo',
+  },
+  {
+    name: 'Soli',
+    edad: 7,
+    raza: 'cruzado',
+  },
+  {
+    name: 'Rigo',
+    edad: 9,
+    raza: 'doberman',
+  },
+];
+/*
+{
+  'chanchito':{}
+}
+*/
+const objIndexado = perros.reduce(
+  (acc, curr) => ({
+    ...acc,
+    [curr['name']]: curr,
+  }),
+  {}
+);
+
+console.log(objIndexado);
+console.log(objIndexado.Soli);
