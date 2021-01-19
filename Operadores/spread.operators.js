@@ -28,3 +28,14 @@ console.log(persona);
 console.log(persona2);
 console.log(persona3);
 console.log(persona5);
+
+// desestructuraciones de objetos
+const avenger = {
+  nombre: 'Steve',
+  clave: 'Capitan america',
+  poder: 'Droga',
+};
+
+const { nombre, clave, poder } = avenger;
+
+console.log(`${nombre} ${clave} ${poder}`);

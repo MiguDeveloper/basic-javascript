@@ -71,6 +71,18 @@ const users = [
  * pero unicamente si estan en sus 20 y si su nombre tiene mas de 10 caracteres
  */
 
+const enRango = users.filter((user) => {
+  if (
+    user.age >= 20 &&
+    user.age < 30 &&
+    (user.firstName + ' ' + user.lastName).length >= 10
+  ) {
+    return user;
+  }
+});
+const arreglo = enRango.map((item) => `${item.firstName} ${item.lastName}`);
+console.log(arreglo);
+
 // probamos con filter y map
 const estanEnVeintes = (user) => user.age >= 20 && user.age < 30;
 const getNombreCompleto = (user) => `${user.firstName} ${user.lastName}`;
@@ -84,7 +96,6 @@ const usuariosFiltrados = users
 console.log(usuariosFiltrados);
 
 // Usando reduce
-
 const usersFilters = users.reduce((acc, user) => {
   const fullName = getNombreCompleto(user);
   if (estanEnVeintes(user) && getMayora10Caracteres(fullName)) {
