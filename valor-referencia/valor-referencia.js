@@ -50,6 +50,15 @@ num2 += 10;
 console.log(num1);
 console.log(num2);
 
+const foo = (str) => {
+  str = 'nuevo valor';
+  return str;
+};
+
+const strTest = 'whatever';
+console.log(foo(strTest));
+console.log(strTest);
+
 // los Object, Array y function se pasan por referencia
 // es decir que no se asignan valores sino referencias
 const a = [1, 2, 3];
@@ -58,3 +67,15 @@ a.push(6);
 b.push(5);
 
 console.log(a, b);
+
+const funArrayRef = (arr) => {
+  const result = [];
+  while (arr.length) {
+    result.push(arr.shift());
+  }
+  return result;
+};
+
+const arrRef1 = [1, 2, 3, 4];
+console.log(funArrayRef(arrRef1));
+console.log(arrRef1);
