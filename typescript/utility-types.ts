@@ -23,6 +23,25 @@ type DrinksJaneLikes = 'Tea' | 'Lemonade' | 'Mohito';
 let JanesDrink2: Extract<AvailableDrinks, DrinksJaneLikes>;
 JanesDrink2 = 'Lemonade';
 
+// NonNullable
+interface StarshipProperties {
+  color?: 'blue' | 'red' | 'green';
+}
+// evitamos que manden un null o undefined: paintStarship(1, undefined)
+const paintStarhip = (
+  id: number,
+  color: NonNullable<StarshipProperties['color']>
+) => {
+  return {
+    id,
+    color,
+  };
+};
+paintStarhip(1, 'green');
+
+// lo combinamos con el ReturnType
+type PaintStarshipReturn = ReturnType<typeof paintStarhip>;
+
 // Partial
 const updateStarship = (id: number, starship: Partial<Starship>) => {};
 
