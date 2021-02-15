@@ -1,8 +1,8 @@
-let a = 10;
-let b = a;
+let aa = 10;
+let bb = aa;
 
-a = 30;
-console.log({ a, b });
+aa = 30;
+console.log({ aa, bb });
 
 let juan = { nombre: 'Juan' };
 let ana = { ...juan };
@@ -79,3 +79,9 @@ const funArrayRef = (arr) => {
 const arrRef1 = [1, 2, 3, 4];
 console.log(funArrayRef(arrRef1));
 console.log(arrRef1);
+
+const nums = [1, 2, 3, 4, 5];
+let num = nums[0];
+num = 3;
+console.log(nums);
+console.log(num);
