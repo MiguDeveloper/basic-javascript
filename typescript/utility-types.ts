@@ -3,11 +3,47 @@ interface Starship {
   enableHyperjump: boolean;
 }
 
-// Pick
-type StarshipNameOnly = Pick<Starship, 'name'>;
+interface User {
+  id: number;
+  name: string;
+  description: string;
+  color: string;
+}
 
-// Omit: opuesto a Pick
+// Pick examples: cuando queremos tomar solo ciertas propiedades que nos interesan
+type StarshipNameOnly = Pick<Starship, 'name'>;
+type UserMed = Pick<User, 'color' | 'name'>;
+
+const UserBasic: Pick<User, 'id' | 'description'> = {
+  id: 233,
+  description: '',
+};
+
+const UserSuscrip: UserMed = {
+  color: '#23l232',
+  name: 'suscripcion',
+};
+
+// Omit: opuesto a Pick, ya que excluye las propiedades que le indiquemos
 type StartShipOmit = Omit<Starship, 'enableHyperjump'>;
+
+type PartialUser = Omit<User, 'color' | 'name'>;
+const formDataUser: PartialUser = {
+  id: 122,
+  description: 'esta es la descripcion',
+};
+
+// Readonly: evitamos que se le asigne valores luego de la declaracion
+type ReadonlyUser = Readonly<User>;
+
+let userOnlyRead: ReadonlyUser = {
+  id: 212,
+  name: 'Miguel',
+  description: 'whatever',
+  color: '#CCC',
+};
+// con readonly la siguiente linea nos dara un error
+// userOnlyRead.description = ''
 
 // Exclude
 type AvailableDrinks = 'Coffee' | 'Tea' | 'Orange Juice' | 'Lemonade';
@@ -42,12 +78,19 @@ paintStarhip(1, 'green');
 // lo combinamos con el ReturnType
 type PaintStarshipReturn = ReturnType<typeof paintStarhip>;
 
-// Partial
+// Partial examples: cuando queremos que los propiedades sean mas flexibles
 const updateStarship = (id: number, starship: Partial<Starship>) => {};
-
 updateStarship(1, { name: 'Explorer' });
 
-// Record
+const createUser = (tipo: string, user: Partial<User>) => {};
+createUser('usario', { color: '' });
+
+const formUser: Partial<User> = {
+  name: 'Miguel',
+  description: 'Desarrollador frontend',
+};
+
+// Record examples
 const starships: Record<string, Starship> = {
   Explorer1: {
     name: 'Explorer1',
@@ -58,3 +101,20 @@ const starships: Record<string, Starship> = {
     enableHyperjump: false,
   },
 };
+
+type Admins = 'superadmin' | 'admin';
+
+const admins: Record<Admins, Partial<User>> = {
+  superadmin: {
+    id: 232,
+    color: 'verde',
+  },
+  admin: {
+    id: 6363,
+    description: 'descripcion del admin',
+  },
+};
+
+// keyof: para validar las keys de una objeto
+type UserKey = keyof User;
+const key: UserKey = 'description';
