@@ -1,4 +1,5 @@
 "use strict";
+// ejecutar en consola => tsc -w
 (function () {
     // tipos de datos
     let cadena = 'Miguel';

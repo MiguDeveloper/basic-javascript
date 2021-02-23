@@ -106,3 +106,10 @@ const symbol1 = Symbol('a');
 const symbol2 = Symbol('b');
 console.log(typeof symbol1);
 console.log(symbol1 === symbol2);
+
+const typesRoles = {
+  admin: 'ADMIN_ROLE',
+  user: 'USER_ROLE',
+};
+
+console.log(typesRoles.admin === 'ADMIN_ROLE' ? 'verdad' : 'falso');
