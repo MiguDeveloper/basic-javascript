@@ -44,6 +44,8 @@ const recordVideoThree = new Promise((resolve, rej) => {
   resolve('Video 3 recorded');
 });
 
-Promise.all([recordVideOne, recordVideoTwo, recordVideoThree]).then((message) =>
-  console.log(message)
-);
+Promise.all([
+  recordVideOne,
+  recordVideoTwo,
+  recordVideoThree,
+]).then(([msg1, msg2, msg3]) => console.log({ msg1, msg2, msg3 }));
