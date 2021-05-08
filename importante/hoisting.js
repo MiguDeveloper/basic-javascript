@@ -25,18 +25,19 @@ getName();
 
 // es importante recalcar que los bloques 'for' e 'if' no habren nuevos ambitos
 function getObjetos() {
-  var item = { i: 'value' };
-  for (var idx in [3, 4]) {
+  var item = { i: 'valuezz' };
+  for (var idx of [3, 4]) {
+    console.log(item);
     var item = { i: idx };
     console.log(item);
   }
   console.log(item);
 }
 
-//getObjetos();
+getObjetos();
 
 // Hoisting: otra vez lo que esta pasando
-function getObjetos() {
+function getObjetotts() {
   var item; // primera item declaracion
   var item; // segundo item: dentro del for
   var idx;
@@ -49,4 +50,4 @@ function getObjetos() {
   console.log(item);
 }
 
-getObjetos();
+//getObjetos();
