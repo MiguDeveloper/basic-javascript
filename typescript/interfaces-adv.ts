@@ -62,28 +62,15 @@ const body: Body = {
 const clasePrincipal = ClasePrincipal.fromObject(body);
 console.log(clasePrincipal);
 
-export type ApisType = PreventorApis | CoroApis;
+export type ApisType = Apis | CoreApis;
 
-export enum PreventorApis {
+export enum Apis {
   ACCOUNT = 'account',
   CRM = 'crm',
-  DASHBOARD = 'dashboard',
-  KYC = 'kyc',
-  LOG = 'log',
-  LOGIN = 'login',
-  ONBOARDING = 'onboarding',
-  DASHBOARD_ONBOARDING = 'dashboard/onboarding',
-  SETTING = 'setting',
-  SECURITY = 'security',
-  USERPROFILE = 'userprofile',
-  WATCHLIST = 'watch-list',
-  IDETECTOR = 'idetector',
-  CUSTOMERS = 'customers',
-  MONITORING = 'monitoring',
 }
 
-export enum CoroApis {
+export enum CoreApis {
   CORO = 'coro',
 }
 
-const api: ApisType = CoroApis.CORO;
+const api: ApisType = CoreApis.CORO;
