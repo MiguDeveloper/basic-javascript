@@ -23,3 +23,14 @@ const {
 } = medicos;
 
 console.log({ nombre, _id });
+
+const objphones = { phones: ['cel1'] };
+const objAddresses = { addresses: ['address1'] };
+const objEmails = { emails: ['email1'] };
+
+const { phones, addresses, emails } = objphones;
+
+const data = phones || addresses || emails;
+
+console.log(data[0]);
+console.log(addresses, emails, phones);
