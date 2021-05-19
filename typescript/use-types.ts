@@ -27,3 +27,18 @@ const getType = (key: ToastType) => {
 };
 
 getType('success');
+
+class Usuario {
+  nombre: string;
+  edad?: number;
+}
+
+const user: Usuario = {
+  nombre: 'miguel',
+};
+console.log(user.edad);
+if (user.edad) {
+  console.log('tiene edad');
+} else {
+  console.log('no tiene edad');
+}
