@@ -194,3 +194,71 @@ const objIndexado = perros.reduce(
 
 console.log(objIndexado);
 console.log(objIndexado.Soli);
+
+/*
+ * EJEMPLOS PARA CALCULOS DE MIN O MAX
+ */
+
+const califications = [1, 2, 3, 4, 5];
+console.log(Math.min(...califications), Math.max(...califications));
+
+const smaller = (acc, cur) => {
+  if (acc <= cur) {
+    acc = cur;
+  }
+  return cur;
+};
+
+const min1 = califications.reduce(smaller, 0);
+const min2 = califications.reduce((acc, cur) => (cur >= acc ? cur : acc), 0);
+console.log(min1, min2);
+
+/*
+ * MOSTRAR LAS CIUDADES DESDE LA MAS REPETIDAD HASTA LA MENOS REPETIDA
+ */
+
+const cities = [
+  'nash',
+  'nash',
+  'los ang',
+  'nash',
+  'memp',
+  'barc',
+  'los ang',
+  'sev',
+  'mad',
+  'cana',
+  'barc',
+  'mad',
+  'nash',
+  'barc',
+  'lon',
+  'ber',
+  'mad',
+  'nash',
+  'lon',
+  'mad',
+];
+
+const objCities = {};
+cities.forEach((citie) => {
+  objCities[citie] = objCities[citie] ? objCities[citie] + 1 : 1;
+});
+
+const showCitiesMostFamous = (firstPosition) => {
+  const objResult = cities.reduce(
+    (acc, cur) => ({
+      ...acc,
+      [cur]: acc[cur] ? acc[cur] + 1 : 1,
+    }),
+    {}
+  );
+
+  return Object.keys(objResult)
+    .map((citie) => ({ name: citie, rating: objResult[citie] }))
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, firstPosition)
+    .map((citie) => citie.name);
+};
+
+console.log(showCitiesMostFamous(5));
