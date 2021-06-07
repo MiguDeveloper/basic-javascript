@@ -262,3 +262,26 @@ const showCitiesMostFamous = (firstPosition) => {
 };
 
 console.log(showCitiesMostFamous(5));
+
+const arrUsers = [
+  { id: 11, name: 'Adam', age: 23, group: 'editor' },
+  { id: 47, name: 'John', age: 28, group: 'admin' },
+  { id: 85, name: 'William', age: 34, group: 'editor' },
+  { id: 97, name: 'Oliver', age: 28, group: 'admin' },
+];
+
+const conteo = arrUsers.reduce((acc, cur) => {
+  acc[cur.age] = acc[cur.age] + 1 || 1;
+  return acc;
+}, {});
+
+const conteo2 = arrUsers.reduce(
+  (acc, cur) => ({
+    ...acc,
+    [cur.age]: acc[cur.age] + 1 || 1,
+  }),
+  {}
+);
+
+console.log(conteo);
+console.log(conteo2);
